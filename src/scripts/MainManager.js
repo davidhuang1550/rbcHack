@@ -1,8 +1,18 @@
-define([], function() {
-    
-    function init(){
-        console.log("hello");
-    }
+define(['Route', 'CommonAjax'], 
+    function(Route, CommonAjax) {
 
-    return init;
+    class MainManager {
+        constructor(){
+
+        }
+
+        init(){
+            
+
+        }
+
+    };
+
+    return new MainManager();
+
 });
