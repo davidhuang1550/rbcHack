@@ -1,4 +1,4 @@
-define([], 
+define(['jquery','scrollx','scrolly','util','FrontpageInit'], 
         function() {
     
     class FrontPage{

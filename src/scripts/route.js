@@ -1,16 +1,18 @@
-define(['CommonStrings', 'FrontPage','CommonAjax'], 
-        function(_, FrontPage, CommonAjax) {
+define(['CommonStrings','CommonAjax'], 
+        function(_, CommonAjax) {
 
-    function route(path, loadInto, ...args){
+    function route(commonStrings, path, loadInto, ...args){
         let inlinePromise;
         inlinePromise = CommonAjax(path);
         inlinePromise.done(function(result){
             let mClass;
-            switch (path){
+            switch (commonStrings){
                 case _.FrontPage:
                     $(loadInto).html(result);
-                    mClass = new FrontPage();
-                    mClass.InitializeListeners();
+                    require(['FrontPage'], function(FrontPage){
+                        mClass = new FrontPage();
+                        mClass.InitializeListeners();
+                    });
                     break;
                 default:
                     
