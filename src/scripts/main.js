@@ -12,13 +12,16 @@ requirejs.config({
         CommonAjax    : './commonJs/CommonAjax',
         jquery        : '../lib/jquery.min',
         PartialViewStrings : './commonJs/PartialViewStrings',
-        scrollx      : '../lib/jquery.scrollex.min',
+        scrollx       : '../lib/jquery.scrollex.min',
         scrolly       : '../lib/jquery.scrolly.min',
         skel          : '../lib/skel.min',
         util          : '../lib/util',
         Frontpage     : 'FrontPage',
-        FrontpageInit : '../lib/FrontpageInit'
-        
+        FrontpageInit : '../lib/FrontpageInit',
+        ChallengeOne  : 'ChallengeOne',
+        ChallengeTwo  : 'ChallengeTwo',
+        ChallengeThree: 'ChallengeThree',
+        Footer        : './commonJs/Footer'
         
      },
     shim: {    

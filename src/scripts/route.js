@@ -1,5 +1,5 @@
-define(['PartialViewStrings','CommonAjax'], 
-        function(_, CommonAjax) {
+define(['PartialViewStrings','CommonAjax', 'ChallengeOne'], 
+        function(_, CommonAjax, ChallengeOne) {
 
     function route(path, loadInto, ...args){
         let inlinePromise;
@@ -20,6 +20,17 @@ define(['PartialViewStrings','CommonAjax'],
                         mClass = new Story();
                         mClass.InitializeListeners();
                     });
+                case _.ChallengeOne:
+                    $(loadInto).html(result);
+                    mClass = new ChallengeOne();
+                    mClass.InitializeListeners();
+                    break;
+                case _.ChallengeTwo:
+    
+                    break;
+                case _.ChallengeThree:
+
+                    break;
                 default:
                     console.log("404 error");
                     break;
