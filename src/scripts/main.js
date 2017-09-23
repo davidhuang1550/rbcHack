@@ -7,10 +7,11 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
-        MainManger : 'MainManager',
-        Route      : 'route',
-        CommonAjax : 'commonJs/CommonAjax',
-        jquery     : '../lib/jquery.min'
+        MainManger    : 'MainManager',
+        Route         : 'route',
+        CommonAjax    : 'commonJs/CommonAjax',
+        jquery        : '../lib/jquery.min',
+        CommonStrings : 'commonJs/CommonStrings'
      }
 });
 
