@@ -7,14 +7,19 @@ requirejs.config({
     //never includes a ".js" extension since
     //the paths config could be for a directory.
     paths: {
-        MainManger : 'MainManager'
-    }
+        MainManger    : 'MainManager',
+        Route         : 'route',
+        CommonAjax    : './commonJs/CommonAjax',
+        jquery        : '../lib/jquery.min',
+        CommonStrings : './commonJs/CommonStrings',
+        PartialViewStrings : './commonJs/PartialViewStrings'
+     }
 });
 
 // Start the main app logic.
 requirejs(['MainManager'],
     function   (MainManager) {
-    MainManager();
+    MainManager.init();
     //jQuery, canvas and the app/sub module are all
     //loaded and can be used here now.
 });
