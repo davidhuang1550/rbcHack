@@ -11,7 +11,6 @@ requirejs.config({
         Route         : 'route',
         CommonAjax    : './commonJs/CommonAjax',
         jquery        : '../lib/jquery.min',
-        CommonStrings : './commonJs/CommonStrings',
         PartialViewStrings : './commonJs/PartialViewStrings',
         scrollx      : '../lib/jquery.scrollex.min',
         scrolly       : '../lib/jquery.scrolly.min',
@@ -38,6 +37,9 @@ requirejs.config({
         },
         util : {
             deps: ['jquery']
+        },
+        Story: {
+            deps: ['jquery','scrollx','scrolly','skel','util']
         }
     }
 });

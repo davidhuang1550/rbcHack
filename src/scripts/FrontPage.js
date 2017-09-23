@@ -1,14 +1,16 @@
-define(['jquery','scrollx','scrolly','util','FrontpageInit'], 
-        function() {
+define(['jquery','Route','PartialViewStrings','FrontpageInit'], 
+        function($,Route,PartialViewStrings) {
     
     class FrontPage{
     
         constructor(){
 
         }
-
+//commonStrings, path, loadInto, ...args
         InitializeListeners(){
-
+            $('#getstarted').on('click',function(){
+                Route(PartialViewStrings.Story,"#container");
+            });
         }
     
     }
