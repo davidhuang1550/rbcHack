@@ -1,5 +1,5 @@
-define(['Route', 'CommonAjax'], 
-    function(Route, CommonAjax) {
+define(['Route', 'CommonAjax','CommonStrings','PartialViewStrings'], 
+    function(Route, CommonAjax, CommonStrings,PartialViewStrings) {
 
     class MainManager {
         constructor(){
@@ -7,7 +7,7 @@ define(['Route', 'CommonAjax'],
         }
 
         init(){
-            
+            Route(PartialViewStrings.FrontPage,'#container');    
 
         }
 

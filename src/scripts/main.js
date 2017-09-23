@@ -9,9 +9,10 @@ requirejs.config({
     paths: {
         MainManger    : 'MainManager',
         Route         : 'route',
-        CommonAjax    : 'commonJs/CommonAjax',
+        CommonAjax    : './commonJs/CommonAjax',
         jquery        : '../lib/jquery.min',
-        CommonStrings : 'commonJs/CommonStrings'
+        CommonStrings : './commonJs/CommonStrings',
+        PartialViewStrings : './commonJs/PartialViewStrings'
      }
 });
 
