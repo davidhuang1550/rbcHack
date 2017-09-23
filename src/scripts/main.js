@@ -16,12 +16,17 @@ requirejs.config({
         scrolly       : '../lib/jquery.scrolly.min',
         skel          : '../lib/skel.min',
         util          : '../lib/util',
+        Ace           : '../lib/ace',
         Frontpage     : 'FrontPage',
         FrontpageInit : '../lib/FrontpageInit',
         ChallengeOne  : 'ChallengeOne',
         ChallengeTwo  : 'ChallengeTwo',
         ChallengeThree: 'ChallengeThree',
-        Footer        : './commonJs/Footer'
+        Footer        : './commonJs/Footer',
+        themeMonoksi  : '../lib/theme-monokai',
+        modeJavascript: '../lib/mode-javascript',
+        workerJavascript: '../lib/worker-javascript'
+        
         
      },
     shim: {    
@@ -43,6 +48,9 @@ requirejs.config({
         },
         Story: {
             deps: ['jquery','scrollx','scrolly','skel','util']
+        },
+        ChallengeOne: {
+            deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript']
         }
     }
 });

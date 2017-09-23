@@ -1,0 +1,34 @@
+body {
+    background-color: white;
+}
+#editor { 
+    margin-top:2em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width:100%;
+}
+#navigation {
+    background-color: lightblue;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+#submit, #run {
+    cursor: pointer;
+}
+.panel{
+    height: 400px;
+}
+.panel-footer {
+
+}
+.btn-default{
+  float:right;
+}
+.notepad{
+  width : 270px;
+  height: 300px
+}

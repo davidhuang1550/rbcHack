@@ -1,43 +1,87 @@
 
-<div class="container">
-    <div class="row" id="ChallengeContainer">
-        <div class=" col-lg-4 left-panel">
-            <div class="container">
-  <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+<div class="container-fluid" style="padding:0px;margin:5px;height:80%;width:100%;">
+    <div class="row" id="ChallengeContainer" >
+        <div class=" col-lg-4 col-md-4 col-sm-4 left-panel" style="padding:0px;margin:0px;">
+            
+            <div class="container-fluid" style="padding:0px;margin:0px;">
+              <!-- Modal -->
+            <div id="storyModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Notes</h4>
-      </div>
-      <div class="modal-body">
-        <textarea class="notepad" rows="4" cols="50">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Got stuck eh!!!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Hints go here.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
 
-        </textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+              </div>
+            </div>
+              <div class="panel panel-primary">
+              <div class="panel-heading">Question</div>
+              <div class="panel-body">Content goes here!!</div>
+              <div class="panel-footer">
+                <button type="button" class="btn btn-primary">Start</button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Hint</button>
+              </div>
+            </div>
+            </div>
+            <div class="container-fluid" style="padding:0px;margin:0px;">
+              <!-- Modal -->
+            <div id="notesModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
 
-  </div>
-</div>
-  <div class="panel panel-primary">
-  <div class="panel-heading">Notes</div>
-  <div class="panel-body">
-    <textarea class="notepad" rows="4" cols="50">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Notes</h4>
+                  </div>
+                  <div class="modal-body">
+                    <textarea class="notepad" rows="4" cols="50">
 
-    </textarea>
-    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Expand</button>
-  </div>
+                    </textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
 
-</div>
-</div>
+              </div>
+            </div>
+              <div class="panel panel-primary">
+              <div class="panel-heading">Notes</div>
+              <div class="panel-body">
+                <textarea class="notepad" rows="4">
+
+                </textarea>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Expand</button>
+              </div>
+
+            </div>
+            </div>
         </div>
-        <div class="col-lg-8 right-panel">
+        <div class="col-lg-8 col-md-8 col-sm-8 right-panel" style="height:80%;">        
+        <!-- Wrapper -->
+        <div id="wrapper" class="divided">
+            <div id="navigation" class="row">
+                <div id="timer" class="col-sm-10"></div>
+                <div id="submit" class="col-sm-1" style="text-align:right;">submit</div>
+                <div id="run" class="col-sm-1" style="text-align:right;">run</div>
+            </div>
+            <div id="editor">function foo(items) {
+                var x = "All this is syntax highlighted";
+                return x;
+            }</div>
+        
+        </div>
             
         </div>
     </div>

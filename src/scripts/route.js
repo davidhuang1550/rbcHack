@@ -1,5 +1,5 @@
-define(['PartialViewStrings','CommonAjax', 'ChallengeOne'], 
-        function(_, CommonAjax, ChallengeOne) {
+define(['PartialViewStrings','CommonAjax'], 
+        function(_, CommonAjax) {
 
     function route(path, loadInto, ...args){
         let inlinePromise;
@@ -20,10 +20,13 @@ define(['PartialViewStrings','CommonAjax', 'ChallengeOne'],
                         mClass = new Story();
                         mClass.InitializeListeners();
                     });
+                    break;
                 case _.ChallengeOne:
                     $(loadInto).html(result);
-                    mClass = new ChallengeOne();
-                    mClass.InitializeListeners();
+                    require(['ChallengeOne'], function(ChallengeOne){
+                        mClass = new ChallengeOne();
+                        mClass.InitializeListeners();
+                    });
                     break;
                 case _.ChallengeTwo:
     
