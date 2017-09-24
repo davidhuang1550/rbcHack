@@ -1,5 +1,5 @@
-define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
-        function($, CommonAjax, Footer, PartialViewStrings){
+define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
+        function($, CommonAjax, Footer, PartialViewStrings, Route){
     class ChallengeOne{
         constructor(){
             this.editor;
@@ -36,19 +36,29 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
                 this.editor.setShowPrintMargin(false);
                 this.editor.getSession().setMode("ace/mode/javascript");
 
+
             require(['timer'],function(){});
             $("#submit").on('click',function(){
                 self.submit();
-            })  ;
-
-            inlinePromise = CommonAjax(PartialViewStrings.Footer);
-            inlinePromise.done(function(result){
-                $("#footer").html(result);
-            }).fail(function(){
-                console.log("failed downloading footer");
             });
 
+            $("#run").on('click', function(){
+                function yourCustomLog(msg) {
+                    $("#console").append('<p style="margin:0px;">'+msg+'</p>');
+                }
 
+                window.console.log = yourCustomLog;
+
+                try{
+
+                    var as_func = eval('('+self.editor.getSession().getValue()+')');
+
+                    console.log(as_func());
+                }catch(e){
+                    $("#console").append('<p style="margin:0px;">'+e+'</p>');
+                }
+
+            });
         }
 
     }

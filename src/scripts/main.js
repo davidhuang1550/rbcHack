@@ -57,7 +57,16 @@ requirejs.config({
         },
         ChallengeTwo: {
             deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
-        }
+        },
+        ChallengeThree: {
+            deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
+        },
+        StoryTwo: {
+            deps: ['jquery','scrollx','scrolly','skel','util']
+        },
+        StoryThree: {
+            deps: ['jquery','scrollx','scrolly','skel','util']
+        },
     }
 });
 
