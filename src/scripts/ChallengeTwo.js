@@ -26,6 +26,7 @@ define(['jquery'],function($){
 
         InitializeListeners(){
             let self = this;
+            $(".modal-backdrop").remove();
             $(document).ready(function(){
                 self.editor = ace.edit("editor");
                 self.editor.setTheme("ace/theme/monokai");
