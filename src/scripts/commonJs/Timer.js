@@ -1,10 +1,10 @@
-define([],function(){
+define(['jquery'],function($){
     document.getElementById('timer').innerHTML =
       "15:00";
     startTimer();
 
     function startTimer() {
-      var presentTime = document.getElementById('timer').innerHTML;
+      var presentTime = $('timer').text();
       var timeArray = presentTime.split(/[:]+/);
       var m = timeArray[0];
       var s = checkSecond((timeArray[1] - 1));

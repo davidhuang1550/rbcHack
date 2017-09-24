@@ -47,7 +47,7 @@ define(['jquery','Route', 'PartialViewStrings'],
                 });
 
                 $("#next").on('click', function(){
-                    Route(PartialViewStrings.Completition, '#container');
+                    Route(PartialViewStrings.Completion, '#container');
                 });
             });        
         }
