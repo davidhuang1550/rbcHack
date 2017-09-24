@@ -32,7 +32,6 @@ define(['jquery','Route', 'PartialViewStrings'],
         InitializeListeners(){
             let self = this;
             $(document).ready(function(){
-                $(".modal-backdrop").remove();
 
                 self.editor = ace.edit("editor");
                 self.editor.setTheme("ace/theme/monokai");
@@ -43,7 +42,6 @@ define(['jquery','Route', 'PartialViewStrings'],
                 $("#submit").on('click',function(){
                     self.submit();
                 });
-
                 $('#next').on('click', function(){
                     Route(PartialViewStrings.StoryThree, "#container");
                 });
