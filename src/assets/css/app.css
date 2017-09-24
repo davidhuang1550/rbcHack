@@ -4,12 +4,11 @@ body {
     width:100%;
 }
 #editor { 
-    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 65%;
+    height: 100%;
     width:100%;
 }
 #navigation {
@@ -25,6 +24,7 @@ body {
 }
 .panel-heading{
   height:50px;
+  padding: 0px;
 }
 
 .panel-footer {
@@ -35,5 +35,6 @@ body {
 }
 .notepad{
   width : 100%;
-  height: 100%
+  height: 100%;
+  padding: 3em;
 }
