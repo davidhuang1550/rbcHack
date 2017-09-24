@@ -48,10 +48,13 @@ requirejs.config({
         util : {
             deps: ['jquery']
         },
-        Story: {
+        StoryOne: {
             deps: ['jquery','scrollx','scrolly','skel','util']
         },
         ChallengeOne: {
+            deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
+        },
+        ChallengeTwo: {
             deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
         }
     }

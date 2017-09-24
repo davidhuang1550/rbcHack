@@ -10,7 +10,7 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
             value = editor.getSession().getValue()
             problem = "sum"
             $.ajax({
-              url: "http://jsonpwrapper.com/?urls%5B%5D=https%3A%2F%2Frbcvalidate.herokuapp.com%2Fvalidate",
+              url: "https://rbcvalidate.herokuapp.com/validate",
               type: "POST",
               dataType: "json",
               data: {"code": value, "problem": problem},
@@ -62,7 +62,7 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
             
             $("#submit").on('click',function(){
                 self.submit();
-            });
+            })  ;
             
             inlinePromise = CommonAjax(PartialViewStrings.Footer);
             inlinePromise.done(function(result){

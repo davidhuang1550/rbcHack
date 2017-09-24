@@ -14,11 +14,18 @@ define(['PartialViewStrings','CommonAjax'],
                         mClass.InitializeListeners();
                     });
                     break;
-                case _.Story:
+                case _.StoryOne:
                     $(loadInto).html(result);
-                    require(['Story'], function(Story){
-                        mClass = new Story();
+                    require(['StoryOne'], function(StoryOne){
+                        mClass = new StoryOne();
                         mClass.InitializeListeners();
+                    });
+                    break;
+                case _.StoryTwo:
+                    $(loadInto).html(result);
+                    require(['StoryTwo'], function(StoryTwo){
+                        mClass = new StoryTwo();
+                        mClass.InitializeListeners();        
                     });
                     break;
                 case _.ChallengeOne:
@@ -29,7 +36,11 @@ define(['PartialViewStrings','CommonAjax'],
                     });
                     break;
                 case _.ChallengeTwo:
-    
+                    $(loadInto).html(result);
+                    require(['ChallengeTwo'], function(ChallengeTwo){
+                        mClass = new ChallengeTwo();
+                        mClass.InitializeListeners();
+                    });
                     break;
                 case _.ChallengeThree:
 

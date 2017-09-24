@@ -9,7 +9,7 @@ define(['jquery','Route','PartialViewStrings','FrontpageInit'],
 //commonStrings, path, loadInto, ...args
         InitializeListeners(){
             $('#getstarted').on('click',function(){
-                Route(PartialViewStrings.Story,"#container");
+                Route(PartialViewStrings.StoryOne,"#container");
             });
         }
     
