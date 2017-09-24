@@ -1,22 +1,29 @@
 define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         function($, CommonAjax, Footer, PartialViewStrings){
     class ChallengeOne{
-        constrcutor(){
-
+        constructor(){
+            this.editor = ace.edit("editor");
+            this.editor.setTheme("ace/theme/monokai");
+            this.editor.setShowPrintMargin(false);
+            this.editor.getSession().setMode("ace/mode/javascript");
         }
         // since this is the first challenge it can be in 
         
         submit() {
-            value = editor.getSession().getValue()
-            problem = "sum"
+            var value = this.editor.getSession().getValue()
+            var problem = "sum"
             $.ajax({
-              url: "http://jsonpwrapper.com/?urls%5B%5D=https%3A%2F%2Frbcvalidate.herokuapp.com%2Fvalidate",
+              url: "http://localhost:3000/validate",
               type: "POST",
               dataType: "json",
               data: {"code": value, "problem": problem},
               // dataType: "text",
-              success: function(response){
-                console.log(response);
+              success: function(responses){
+                $('#modal-body-results').empty()
+                for (var i = responses.length - 1; i >= 0; i--) {
+                  console.log(responses)
+                  $('#modal-body-results').append(responses[i].test + " <strong>"+responses[i].response+"</strong>" + " " + "<br>")
+                };
               },
               error: function(error){
                 console.log(error);
@@ -50,10 +57,6 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         InitializeListeners(){      
             let inlinePromise,
                 self = this;
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/monokai");
-            editor.setShowPrintMargin(false);
-            editor.getSession().setMode("ace/mode/javascript");
             
             
         /*    document.getElementById('timer').innerHTML =
