@@ -7,6 +7,7 @@ define(['Route', 'PartialViewStrings'], function(
         }
     
         InitializeListeners(){
+            $(".modal-backdrop").remove();
             $("#continueChallenge").on('click', function(){
                 Route(PartialViewStrings.ChallengeTwo, "#container");
             });
