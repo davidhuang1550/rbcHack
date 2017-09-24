@@ -2,13 +2,17 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         function($, CommonAjax, Footer, PartialViewStrings){
     class ChallengeOne{
         constrcutor(){
-
+            this.editor = ace.edit("editor");
+            this.editor.setTheme("ace/theme/monokai");
+            this.editor.setShowPrintMargin(false);
+            this.editor.getSession().setMode("ace/mode/javascript");
+            
         }
         // since this is the first challenge it can be in 
         
         submit() {
-            value = editor.getSession().getValue()
-            problem = "sum"
+            let value = this.editor.getSession().getValue(),
+            problem = "sum";
             $.ajax({
               url: "https://rbcvalidate.herokuapp.com/validate",
               type: "POST",
@@ -50,11 +54,6 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         InitializeListeners(){      
             let inlinePromise,
                 self = this;
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/monokai");
-            editor.setShowPrintMargin(false);
-            editor.getSession().setMode("ace/mode/javascript");
-            
             
         /*    document.getElementById('timer').innerHTML =
             "15:00";
