@@ -2,11 +2,7 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         function($, CommonAjax, Footer, PartialViewStrings){
     class ChallengeOne{
         constrcutor(){
-            this.editor = ace.edit("editor");
-            this.editor.setTheme("ace/theme/monokai");
-            this.editor.setShowPrintMargin(false);
-            this.editor.getSession().setMode("ace/mode/javascript");
-            
+            this.editor;
         }
         // since this is the first challenge it can be in 
         
@@ -54,7 +50,11 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         InitializeListeners(){      
             let inlinePromise,
                 self = this;
-            
+                this.editor =ace.edit("editor");
+                this.editor.setTheme("ace/theme/monokai");
+                this.editor.setShowPrintMargin(false);
+                this.editor.getSession().setMode("ace/mode/javascript");
+                
         /*    document.getElementById('timer').innerHTML =
             "15:00";
             self.startTimer();*/
