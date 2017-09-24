@@ -1,5 +1,5 @@
 define([],function(){
-    
+
     class ChallengeTwo{
         constructor(){
             this.editor;
@@ -29,13 +29,13 @@ define([],function(){
             this.editor.setShowPrintMargin(false);
             this.editor.getSession().setMode("ace/mode/javascript");
 
-            
+
             $("#submit").on('click',function(){
                 self.submit();
             });
 
 
-            
+
         }
     }
 
