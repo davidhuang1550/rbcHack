@@ -60,7 +60,10 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
             "15:00";
             self.startTimer();*/
             
-
+            $("#submit").on('click',function(){
+                self.submit();
+            });
+            
             inlinePromise = CommonAjax(PartialViewStrings.Footer);
             inlinePromise.done(function(result){
                 $("#footer").html(result);
