@@ -1,4 +1,5 @@
-define(['jquery'],function($){
+define(['jquery','Route', 'PartialViewStrings'],
+      function($, Route, PartialViewStrings){
     class ChallengeTwo{
         constructor(){
             this.editor;
@@ -12,9 +13,14 @@ define(['jquery'],function($){
               dataType: "json",
               data: {"code": value, "problem": problem},
               // dataType: "text",
-              success: function(response){
+              success: function(responses){
+                console.log(responses)
                   require(['summary'],function(summary){
                       summary.ChallengeTwo = $('#timer').text();
+                     $('#modal-body-results-2').empty()
+                  for (var i = responses.length - 1; i >= 0; i--) {
+                    $('#modal-body-results-2').append(responses[i].test+" <strong>"+responses[i].response+"</strong></br>")
+                  };
                   });
               },
               error: function(error){
@@ -35,11 +41,11 @@ define(['jquery'],function($){
 
                 require(['timer'],function(){});
                 $("#submit").on('click',function(){
-                //    self.submit();
-                require(['summary'],function(summary){
-                    summary.ChallengeTwo = $('#timer').text();
-                    console.log(summary);
+                    self.submit();
                 });
+
+                $('#next').on('click', function(){
+                    Route(PartialViewStrings.StoryThree, "#container");
                 });
             });
         }
