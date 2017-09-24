@@ -1,29 +1,22 @@
 define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         function($, CommonAjax, Footer, PartialViewStrings){
     class ChallengeOne{
-        constructor(){
-            this.editor = ace.edit("editor");
-            this.editor.setTheme("ace/theme/monokai");
-            this.editor.setShowPrintMargin(false);
-            this.editor.getSession().setMode("ace/mode/javascript");
+        constrcutor(){
+
         }
         // since this is the first challenge it can be in 
         
         submit() {
-            var value = this.editor.getSession().getValue()
-            var problem = "sum"
+            value = editor.getSession().getValue()
+            problem = "sum"
             $.ajax({
-              url: "http://localhost:3000/validate",
+              url: "https://rbcvalidate.herokuapp.com/validate",
               type: "POST",
               dataType: "json",
               data: {"code": value, "problem": problem},
               // dataType: "text",
-              success: function(responses){
-                $('#modal-body-results').empty()
-                for (var i = responses.length - 1; i >= 0; i--) {
-                  console.log(responses)
-                  $('#modal-body-results').append(responses[i].test + " <strong>"+responses[i].response+"</strong>" + " " + "<br>")
-                };
+              success: function(response){
+                console.log(response);
               },
               error: function(error){
                 console.log(error);
@@ -57,6 +50,10 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         InitializeListeners(){      
             let inlinePromise,
                 self = this;
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/monokai");
+            editor.setShowPrintMargin(false);
+            editor.getSession().setMode("ace/mode/javascript");
             
             
         /*    document.getElementById('timer').innerHTML =
@@ -65,7 +62,7 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
             
             $("#submit").on('click',function(){
                 self.submit();
-            });
+            })  ;
             
             inlinePromise = CommonAjax(PartialViewStrings.Footer);
             inlinePromise.done(function(result){

@@ -1,4 +1,5 @@
-define([], function(){
+define(['Route', 'PartialViewStrings'], function(
+        Route, PartialViewStrings){
     class StoryTwo{
 
         constructor(){

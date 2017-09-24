@@ -1,12 +1,16 @@
 define([],function(){
     
-    class ChallengeTwo(){
+    class ChallengeTwo{
         constructor(){
     
         }
 
         InitializeListeners(){
-
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/monokai");
+            editor.setShowPrintMargin(false);
+            editor.getSession().setMode("ace/mode/javascript");
+            
         }
     }
 

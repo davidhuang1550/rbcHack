@@ -53,6 +53,9 @@ requirejs.config({
         },
         ChallengeOne: {
             deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
+        },
+        ChallengeTwo: {
+            deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
         }
     }
 });
