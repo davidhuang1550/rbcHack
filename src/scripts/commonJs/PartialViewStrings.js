@@ -9,7 +9,8 @@ define([], function() {
         Footer       : baseUrl+"Footer.html",
         StoryTwo     : baseUrl+'storytwo.html',
         ChallengeThree: baseUrl+'ChallengeThree.html',
-        StoryThree   : baseUrl+'StoryThree.html'
+        StoryThree   : baseUrl+'StoryThree.html',
+        Completion : baseUrl+'Completion.html'
     }
 
 

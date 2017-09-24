@@ -56,6 +56,13 @@ define(['PartialViewStrings','CommonAjax'],
                         mClass.InitializeListeners();
                     });
                     break;
+                case _.Completion:
+                    $(loadInto).html(result);
+                    require(['Completion'], function(Completion){
+                        mClass = new Completion();
+                        mClass.InitializeListeners();
+                    });
+                    break;
                 default:
                     console.log("404 error");
                     break;

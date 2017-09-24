@@ -28,7 +28,8 @@ requirejs.config({
         workerJavascript: '../lib/worker-javascript',
         bootstrap        : '../lib/bootstrap.min',
         timer         : './commonJs/Timer',
-        summary       : './commonJs/Summary'
+        summary       : './commonJs/Summary',
+        completition  : 'Completion'
 
 
 

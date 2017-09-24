@@ -1,4 +1,6 @@
-define(['jquery'],function($){    
+define(['jquery','Route', 'PartialViewStrings'],
+        function($,Route, PartialViewStrings){
+    
     class ChallengeThree{
         constructor(){
             this.editor;
@@ -34,13 +36,13 @@ define(['jquery'],function($){
 
                 require(['timer'],function(){});    
                 $("#submit").on('click',function(){
-                    //self.submit();
-                    require(['summary'],function(summary){
-                        summary.ChallengeThree = $('#timer').text();
-                    });
+                    self.submit();
                 });
-            });
-            
+
+                $("#next").on('click', function(){
+                    Route(PartialViewStrings.Completition, '#container');
+                });
+            });        
         }
     }
 
