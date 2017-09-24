@@ -1,8 +1,8 @@
 define([],function(){
-    
+
     class ChallengeTwo{
         constructor(){
-    
+
         }
 
         InitializeListeners(){
@@ -10,7 +10,7 @@ define([],function(){
             editor.setTheme("ace/theme/monokai");
             editor.setShowPrintMargin(false);
             editor.getSession().setMode("ace/mode/javascript");
-            
+
         }
     }
 

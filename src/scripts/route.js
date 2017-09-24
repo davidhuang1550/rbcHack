@@ -1,4 +1,4 @@
-define(['PartialViewStrings','CommonAjax'], 
+define(['PartialViewStrings','CommonAjax'],
         function(_, CommonAjax) {
 
     function route(path, loadInto, ...args){
@@ -25,7 +25,7 @@ define(['PartialViewStrings','CommonAjax'],
                     $(loadInto).html(result);
                     require(['StoryTwo'], function(StoryTwo){
                         mClass = new StoryTwo();
-                        mClass.InitializeListeners();        
+                        mClass.InitializeListeners();
                     });
                     break;
                 case _.ChallengeOne:
@@ -52,7 +52,7 @@ define(['PartialViewStrings','CommonAjax'],
 
 
         })
-    
+
     }
 
     return route;
