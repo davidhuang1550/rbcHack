@@ -17,12 +17,12 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
              data: {"code": value, "problem": problem},
              // dataType: “text”,
              success: function(responses){
-               $('#modal-body-results').empty()
-               for (var i = responses.length - 1; i >= 0; i--) {
-                 $('#modal-body-results').append(responses[i].test+" <strong>"+responses[i].response+"</strong></br>")
-               };
                 require(['summary'],function(summary){
                     summary.ChallengeOne = $('#timer').text();
+                    $('#modal-body-results').empty()
+                    for (var i = responses.length - 1; i >= 0; i--) {
+                      $('#modal-body-results').append(responses[i].test+" <strong>"+responses[i].response+"</strong></br>")
+                    };
                 });
              },
              error: function(error){
@@ -46,11 +46,7 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
 
                 require(['timer'],function(){});
                 $("#submit").on('click',function(){
-                    //self.submit();
-                    require(['summary','Route'],function(summary, Route){
-                        summary.ChallengeOne = $('#timer').text();
-                        Route(PartialViewStrings.StoryTwo, "#container");
-                    });
+                    self.submit();
                 });
 
                 $("#run").on('click', function(){
