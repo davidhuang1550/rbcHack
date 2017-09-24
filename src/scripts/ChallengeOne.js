@@ -11,15 +11,15 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
            let value = this.editor.getSession().getValue(),
            problem = "sum";
            $.ajax({
-             url: “https://rbcvalidate.herokuapp.com/validate“,
-             type: “POST”,
-             dataType: “json”,
-             data: {“code”: value, “problem”: problem},
+             url: "https://rbcvalidate.herokuapp.com/validate",
+             type: "POST",
+             dataType: "json",
+             data: {"code": value, "problem": problem},
              // dataType: “text”,
              success: function(responses){
-               $(‘#modal-body-results’).empty()
+               $('#modal-body-results').empty()
                for (var i = responses.length - 1; i >= 0; i--) {
-                 $(‘#modal-body-results’).append(responses[i].test+” <strong>“+responses[i].response+“</strong></br>“)
+                 $('#modal-body-results').append(responses[i].test+" <strong>"+responses[i].response+"</strong></br>")
                };
              },
              error: function(error){
