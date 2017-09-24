@@ -48,7 +48,7 @@ requirejs.config({
         util : {
             deps: ['jquery']
         },
-        Story: {
+        StoryOne: {
             deps: ['jquery','scrollx','scrolly','skel','util']
         },
         ChallengeOne: {
