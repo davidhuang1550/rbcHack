@@ -1,4 +1,4 @@
-define(['PartialViewStrings','CommonAjax'], 
+define(['PartialViewStrings','CommonAjax'],
         function(_, CommonAjax) {
 
     function route(path, loadInto, ...args){
@@ -25,6 +25,13 @@ define(['PartialViewStrings','CommonAjax'],
                     $(loadInto).html(result);
                     require(['StoryTwo'], function(StoryTwo){
                         mClass = new StoryTwo();
+                        mClass.InitializeListeners();
+                    });
+                    break;
+                case _.StoryThree:
+                    $(loadInto).html(result);
+                    require(['StoryThree'], function(StoryThree){
+                        mClass = new StoryThree();
                         mClass.InitializeListeners();        
                     });
                     break;
@@ -43,7 +50,11 @@ define(['PartialViewStrings','CommonAjax'],
                     });
                     break;
                 case _.ChallengeThree:
-
+                    $(loadInto).html(result);
+                    require(['ChallengeThree'], function(ChallengeThree){
+                        mClass = new ChallengeThree();
+                        mClass.InitializeListeners();
+                    });
                     break;
                 default:
                     console.log("404 error");
@@ -52,7 +63,7 @@ define(['PartialViewStrings','CommonAjax'],
 
 
         })
-    
+
     }
 
     return route;

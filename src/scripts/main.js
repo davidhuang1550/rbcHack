@@ -26,12 +26,13 @@ requirejs.config({
         themeMonoksi  : '../lib/theme-monokai',
         modeJavascript: '../lib/mode-javascript',
         workerJavascript: '../lib/worker-javascript',
-        bootstrap        : '../lib/bootstrap.min'
+        bootstrap        : '../lib/bootstrap.min',
+        timer         : './commonJs/Timer'
 
-        
-        
+
+
      },
-    shim: {    
+    shim: {
          FrontPage: {
              //These script dependencies should be loaded before loading
              //backbone.js
@@ -56,7 +57,16 @@ requirejs.config({
         },
         ChallengeTwo: {
             deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
-        }
+        },
+        ChallengeThree: {
+            deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
+        },
+        StoryTwo: {
+            deps: ['jquery','scrollx','scrolly','skel','util']
+        },
+        StoryThree: {
+            deps: ['jquery','scrollx','scrolly','skel','util']
+        },
     }
 });
 

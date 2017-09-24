@@ -1,4 +1,4 @@
-define(['Route', 'CommonAjax','PartialViewStrings'], 
+define(['Route', 'CommonAjax','PartialViewStrings'],
     function(Route, CommonAjax,PartialViewStrings) {
 
     class MainManager {
@@ -7,7 +7,7 @@ define(['Route', 'CommonAjax','PartialViewStrings'],
         }
 
         init(){
-            Route(PartialViewStrings.ChallengeOne,'#container');
+            Route(PartialViewStrings.StoryOne,'#container');
         }
 
     };
