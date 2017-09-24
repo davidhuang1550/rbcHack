@@ -3,7 +3,7 @@ body {
     height:100%;
     width:100%;
 }
-#editor { 
+#editor {
     margin-top:2em;
     position: absolute;
     top: 0;
@@ -24,6 +24,10 @@ body {
 .panel{
     height: 400px;
 }
+.panel-heading{
+  height:50px;
+}
+
 .panel-footer {
 
 }
@@ -31,6 +35,9 @@ body {
   float:right;
 }
 .notepad{
-  width : 270px;
-  height: 300px
+   display: block;
+   margin-left: 2px;
+   margin-right: auto;
+   height:80%;
+
 }
