@@ -23,6 +23,10 @@ body {
 .panel{
     height: 400px;
 }
+.panel-heading{
+  height:50px;
+}
+
 .panel-footer {
 
 }
