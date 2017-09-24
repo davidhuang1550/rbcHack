@@ -24,7 +24,7 @@
 
               </div>
             </div>
-              <div class="panel panel-primary" style="padding:0px;margin:0px;height:50%;">
+              <div class="panel panel-primary" style="padding:0px;margin:0px;height:40%;">
               <div class="panel-heading">Question</div>
               <div class="panel-body">Content goes here!!</div>
               <div class="panel-footer">
@@ -54,22 +54,13 @@
 
                   </div>
                 </div>
-                  <div class="panel panel-primary" style="padding:0px;margin:0px;height:50%;">
-                  <div class="panel-heading" style="padding:0px;margin:0px;">
-                  <div class="row">
-                    <div class="col-sm-6">
-                        Notes
-                    </div>
-                    <div class="col-sm-6">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" style="height:20%;">Expand</button>
-                    </div>
-
-                  </div>
-                    </div>
+                  <div class="panel panel-primary" style="padding:0px;margin:0px;height:40%;">
+                  <div class="panel-heading" style="padding:0px;margin:0px;">Notes</div>
                   <div class="panel-body" style="padding:0px;margin:0px;">
                     <textarea class="notepad"  style="padding:0px;margin:0px;height:80%;">
 
                     </textarea>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" style="height:20%;">Expand</button>
                   </div>
 
                 </div>
@@ -77,10 +68,10 @@
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8 right-panel" style="height:100%;padding:0px;margin:0px;">        
             <!-- Wrapper -->
-            <div id="wrapper" class="divided" style="height:65%;">
+            <div id="wrapper" class="divided" style="height:70%;">
                 <div id="navigation" class="row">
                     <div id="timer" class="col-sm-10"></div>
-                    <div id="submit" class="col-sm-1" style="text-align:right;">submit</div>
+                    <div data-toggle="modal" data-target="#myModal" id="submit" class="col-sm-1" style="text-align:right;">submit</div>
                     <div id="run" class="col-sm-1" style="text-align:right;">run</div>
                 </div>
                 <div id="editor">function foo(items) {
@@ -94,6 +85,28 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Challenge Results</h4>
+          </div>
+          <div id="modal-body-results">
+            <p>Loading...</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
     <div class="row footer">
         <div class="col-md-12" id="footer">
 
