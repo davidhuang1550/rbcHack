@@ -1,5 +1,5 @@
-define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
-        function($, CommonAjax, Footer, PartialViewStrings){
+define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
+        function($, CommonAjax, Footer, PartialViewStrings, Route){
     class ChallengeOne{
         constrcutor(){
             this.editor;

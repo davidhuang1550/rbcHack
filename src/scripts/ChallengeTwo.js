@@ -23,10 +23,18 @@ define([],function(){
         }
 
         InitializeListeners(){
-            var editor = ace.edit("editor");
-            editor.setTheme("ace/theme/monokai");
-            editor.setShowPrintMargin(false);
-            editor.getSession().setMode("ace/mode/javascript");
+            let self = this;
+            this.editor = ace.edit("editor");
+            this.editor.setTheme("ace/theme/monokai");
+            this.editor.setShowPrintMargin(false);
+            this.editor.getSession().setMode("ace/mode/javascript");
+
+            
+            $("#submit").on('click',function(){
+                self.submit();
+            });
+
+
             
         }
     }
