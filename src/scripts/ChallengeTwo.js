@@ -25,8 +25,9 @@ define(['jquery'],function($){
 
         InitializeListeners(){
             let self = this;
-            $(".modal-backdrop").remove();
             $(document).ready(function(){
+                $(".modal-backdrop").remove();
+
                 self.editor = ace.edit("editor");
                 self.editor.setTheme("ace/theme/monokai");
                 self.editor.setShowPrintMargin(false);
