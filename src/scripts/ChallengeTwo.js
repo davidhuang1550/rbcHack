@@ -1,5 +1,4 @@
-define([],function(){
-
+define(['jquery'],function($){
     class ChallengeTwo{
         constructor(){
             this.editor;
@@ -14,7 +13,9 @@ define([],function(){
               data: {"code": value, "problem": problem},
               // dataType: "text",
               success: function(response){
-                console.log(response);
+                  require(['summary'],function(summary){
+                      summary.ChallengeTwo = $('#timer').text();
+                  });
               },
               error: function(error){
                 console.log(error);
@@ -24,18 +25,22 @@ define([],function(){
 
         InitializeListeners(){
             let self = this;
-            this.editor = ace.edit("editor");
-            this.editor.setTheme("ace/theme/monokai");
-            this.editor.setShowPrintMargin(false);
-            this.editor.getSession().setMode("ace/mode/javascript");
+            $(".modal-backdrop").remove();
+            $(document).ready(function(){
+                self.editor = ace.edit("editor");
+                self.editor.setTheme("ace/theme/monokai");
+                self.editor.setShowPrintMargin(false);
+                self.editor.getSession().setMode("ace/mode/javascript");
 
-
-            $("#submit").on('click',function(){
-                self.submit();
+                require(['timer'],function(){});
+                $("#submit").on('click',function(){
+                //    self.submit();
+                require(['summary'],function(summary){
+                    summary.ChallengeTwo = $('#timer').text();
+                    console.log(summary);
+                });
+                });
             });
-
-
-
         }
     }
 

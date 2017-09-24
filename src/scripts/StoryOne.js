@@ -7,7 +7,7 @@ define(['jquery','Route','PartialViewStrings','FrontpageInit'],
 
         InitializeListeners(){
             $("#startChallenge").on('click', function(){
-                Route(PartialViewStrings.ChallengeOne, "#container");
+                Route(PartialViewStrings.ChallengeOne , "#container");
             });
         }
 

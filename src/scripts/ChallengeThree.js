@@ -1,5 +1,4 @@
-define([],function(){
-    
+define(['jquery'],function($){    
     class ChallengeThree{
         constructor(){
             this.editor;
@@ -14,6 +13,9 @@ define([],function(){
               data: {"code": value, "problem": problem},
               // dataType: "text",
               success: function(response){
+                  require(['summary'],function(summary){
+                      summary.ChallengeThree = $('#timer').text();
+                  });
                 console.log(response);
               },
               error: function(error){
@@ -24,17 +26,20 @@ define([],function(){
 
         InitializeListeners(){
             let self = this;
-            this.editor = ace.edit("editor");
-            this.editor.setTheme("ace/theme/monokai");
-            this.editor.setShowPrintMargin(false);
-            this.editor.getSession().setMode("ace/mode/javascript");
+            $(document).ready(function(){
+                self.editor = ace.edit("editor");
+                self.editor.setTheme("ace/theme/monokai");
+                self.editor.setShowPrintMargin(false);
+                self.editor.getSession().setMode("ace/mode/javascript");
 
-            
-            $("#submit").on('click',function(){
-                self.submit();
+                require(['timer'],function(){});    
+                $("#submit").on('click',function(){
+                    //self.submit();
+                    require(['summary'],function(summary){
+                        summary.ChallengeThree = $('#timer').text();
+                    });
+                });
             });
-
-
             
         }
     }

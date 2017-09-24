@@ -17,10 +17,13 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
              data: {"code": value, "problem": problem},
              // dataType: “text”,
              success: function(responses){
-               $('#modal-body-results').empty()
-               for (var i = responses.length - 1; i >= 0; i--) {
-                 $('#modal-body-results').append(responses[i].test+" <strong>"+responses[i].response+"</strong></br>")
-               };
+                require(['summary'],function(summary){
+                    summary.ChallengeOne = $('#timer').text();
+                    $('#modal-body-results').empty()
+                    for (var i = responses.length - 1; i >= 0; i--) {
+                      $('#modal-body-results').append(responses[i].test+" <strong>"+responses[i].response+"</strong></br>")
+                    };
+                });
              },
              error: function(error){
                console.log(error);
@@ -34,46 +37,49 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
         InitializeListeners(){
             let inlinePromise,
                 self = this;
-                this.editor =ace.edit("editor");
-                this.editor.setTheme("ace/theme/monokai");
-                this.editor.setShowPrintMargin(false);
-                this.editor.getSession().setMode("ace/mode/javascript");
+            $(document).ready(function(){
+                    self.editor =ace.edit("editor");
+                    self.editor.setTheme("ace/theme/monokai");
+                    self.editor.setShowPrintMargin(false);
+                    self.editor.getSession().setMode("ace/mode/javascript");
 
 
-            require(['timer'],function(){});
-            $("#submit").on('click',function(){
-                self.submit();
+                require(['timer'],function(){});
+                $("#submit").on('click',function(){
+                    self.submit();
+                });
+
+                $("#run").on('click', function(){
+                    function yourCustomLog(msg) {
+                        $("#console").append('<p style="margin:0px;">'+msg+'</p>');
+                    }
+
+                    window.console.log = yourCustomLog;
+
+                    try{
+
+                        var as_func = eval('('+self.editor.getSession().getValue()+')');
+
+                        console.log(as_func());
+                    }catch(e){
+                        $("#console").append('<p style="margin:0px;">'+e+'</p>');
+                    }
+
+                });
+
+                $("#next").on('click', function(){
+                    Route(PartialViewStrings.StoryTwo, "#container");
+                });
+
+                inlinePromise = CommonAjax(PartialViewStrings.Footer);
+                inlinePromise.done(function(result){
+                    $("#footer").html(result);
+                }).fail(function(){
+                    console.log("failed downloading footer");
+                });
+
             });
-
-            $("#run").on('click', function(){
-                function yourCustomLog(msg) {
-                    $("#console").append('<p style="margin:0px;">'+msg+'</p>');
-                }
-
-                window.console.log = yourCustomLog;
-
-                try{
-
-                    var as_func = eval('('+self.editor.getSession().getValue()+')');
-
-                    console.log(as_func());
-                }catch(e){
-                    $("#console").append('<p style="margin:0px;">'+e+'</p>');
-                }
-
-            });
-
-            $("#next").on('click', function(){
-                Route(PartialViewStrings.StoryTwo, "#container");
-            });
-
-            inlinePromise = CommonAjax(PartialViewStrings.Footer);
-            inlinePromise.done(function(result){
-                $("#footer").html(result);
-            }).fail(function(){
-                console.log("failed downloading footer");
-            });
-            
+                
         }
 
     }
