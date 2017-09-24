@@ -27,7 +27,8 @@ requirejs.config({
         modeJavascript: '../lib/mode-javascript',
         workerJavascript: '../lib/worker-javascript',
         bootstrap        : '../lib/bootstrap.min',
-        timer         : './commonJs/Timer'
+        timer         : './commonJs/Timer',
+        summary       : './commonJs/Summary'
 
 
 

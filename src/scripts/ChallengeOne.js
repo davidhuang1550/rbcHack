@@ -21,6 +21,9 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
                for (var i = responses.length - 1; i >= 0; i--) {
                  $('#modal-body-results').append(responses[i].test+" <strong>"+responses[i].response+"</strong></br>")
                };
+                require(['summary'],function(summary){
+                    summary.ChallengeOne = $('#timer').text();
+                });
              },
              error: function(error){
                console.log(error);
@@ -35,15 +38,19 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
             let inlinePromise,
                 self = this;
             $(document).ready(function(){
-                    this.editor =ace.edit("editor");
-                    this.editor.setTheme("ace/theme/monokai");
-                    this.editor.setShowPrintMargin(false);
-                    this.editor.getSession().setMode("ace/mode/javascript");
+                    self.editor =ace.edit("editor");
+                    self.editor.setTheme("ace/theme/monokai");
+                    self.editor.setShowPrintMargin(false);
+                    self.editor.getSession().setMode("ace/mode/javascript");
 
 
                 require(['timer'],function(){});
                 $("#submit").on('click',function(){
-                    self.submit();
+                    //self.submit();
+                    require(['summary','Route'],function(summary, Route){
+                        summary.ChallengeOne = $('#timer').text();
+                        Route(PartialViewStrings.StoryTwo, "#container");
+                    });
                 });
 
                 $("#run").on('click', function(){

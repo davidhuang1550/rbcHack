@@ -14,6 +14,9 @@ define(['jquery'],function($){
               data: {"code": value, "problem": problem},
               // dataType: "text",
               success: function(response){
+                  require(['summary'],function(summary){
+                      summary.ChallengeThree = $('#timer').text();
+                  });
                 console.log(response);
               },
               error: function(error){
@@ -25,14 +28,17 @@ define(['jquery'],function($){
         InitializeListeners(){
             let self = this;
             $(document).ready(function(){
-                this.editor = ace.edit("editor");
-                this.editor.setTheme("ace/theme/monokai");
-                this.editor.setShowPrintMargin(false);
-                this.editor.getSession().setMode("ace/mode/javascript");
+                self.editor = ace.edit("editor");
+                self.editor.setTheme("ace/theme/monokai");
+                self.editor.setShowPrintMargin(false);
+                self.editor.getSession().setMode("ace/mode/javascript");
 
                 require(['timer'],function(){});    
                 $("#submit").on('click',function(){
-                    self.submit();
+                    //self.submit();
+                    require(['summary'],function(summary){
+                        summary.ChallengeThree = $('#timer').text();
+                    });
                 });
             });
 

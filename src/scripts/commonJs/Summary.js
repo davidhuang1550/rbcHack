@@ -1,15 +1,5 @@
 define([], function(){
-    class Summary {
-        
-        constructor(){
-
-        }
-
-        InitializeListeners(){
-
-        }
-    
-    };
+    var Summary = {ChallengeOne: undefined, ChallengeTwo: undefined, ChallengeThree: undefined };
 
     return Summary;
 
