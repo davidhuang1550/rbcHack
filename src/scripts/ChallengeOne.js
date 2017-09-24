@@ -13,7 +13,7 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
             var value = this.editor.getSession().getValue()
             var problem = "sum"
             $.ajax({
-              url: "http://localhost:3000/validate",
+              url: "https://rbcvalidate.herokuapp.com/validate",
               type: "POST",
               dataType: "json",
               data: {"code": value, "problem": problem},
