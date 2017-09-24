@@ -25,7 +25,9 @@ requirejs.config({
         Footer        : './commonJs/Footer',
         themeMonoksi  : '../lib/theme-monokai',
         modeJavascript: '../lib/mode-javascript',
-        workerJavascript: '../lib/worker-javascript'
+        workerJavascript: '../lib/worker-javascript',
+        bootstrap        : '../lib/bootstrap.min'
+
         
         
      },
@@ -50,7 +52,7 @@ requirejs.config({
             deps: ['jquery','scrollx','scrolly','skel','util']
         },
         ChallengeOne: {
-            deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript']
+            deps: ['Ace','modeJavascript','themeMonoksi','workerJavascript','bootstrap']
         }
     }
 });
