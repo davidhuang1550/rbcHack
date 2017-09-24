@@ -34,46 +34,49 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
         InitializeListeners(){
             let inlinePromise,
                 self = this;
-                this.editor =ace.edit("editor");
-                this.editor.setTheme("ace/theme/monokai");
-                this.editor.setShowPrintMargin(false);
-                this.editor.getSession().setMode("ace/mode/javascript");
+            $(document).ready(function(){
+                    this.editor =ace.edit("editor");
+                    this.editor.setTheme("ace/theme/monokai");
+                    this.editor.setShowPrintMargin(false);
+                    this.editor.getSession().setMode("ace/mode/javascript");
 
 
-            require(['timer'],function(){});
-            $("#submit").on('click',function(){
-                self.submit();
+                require(['timer'],function(){});
+                $("#submit").on('click',function(){
+                    self.submit();
+                });
+
+                $("#run").on('click', function(){
+                    function yourCustomLog(msg) {
+                        $("#console").append('<p style="margin:0px;">'+msg+'</p>');
+                    }
+
+                    window.console.log = yourCustomLog;
+
+                    try{
+
+                        var as_func = eval('('+self.editor.getSession().getValue()+')');
+
+                        console.log(as_func());
+                    }catch(e){
+                        $("#console").append('<p style="margin:0px;">'+e+'</p>');
+                    }
+
+                });
+
+                $("#next").on('click', function(){
+                    Route(PartialViewStrings.StoryTwo, "#container");
+                });
+
+                inlinePromise = CommonAjax(PartialViewStrings.Footer);
+                inlinePromise.done(function(result){
+                    $("#footer").html(result);
+                }).fail(function(){
+                    console.log("failed downloading footer");
+                });
+
             });
-
-            $("#run").on('click', function(){
-                function yourCustomLog(msg) {
-                    $("#console").append('<p style="margin:0px;">'+msg+'</p>');
-                }
-
-                window.console.log = yourCustomLog;
-
-                try{
-
-                    var as_func = eval('('+self.editor.getSession().getValue()+')');
-
-                    console.log(as_func());
-                }catch(e){
-                    $("#console").append('<p style="margin:0px;">'+e+'</p>');
-                }
-
-            });
-
-            $("#next").on('click', function(){
-                Route(PartialViewStrings.StoryTwo, "#container");
-            });
-
-            inlinePromise = CommonAjax(PartialViewStrings.Footer);
-            inlinePromise.done(function(result){
-                $("#footer").html(result);
-            }).fail(function(){
-                console.log("failed downloading footer");
-            });
-            
+                
         }
 
     }

@@ -1,4 +1,4 @@
-define([],function(){
+define(['jquery'],function($){
     
     class ChallengeThree{
         constructor(){
@@ -24,14 +24,16 @@ define([],function(){
 
         InitializeListeners(){
             let self = this;
-            this.editor = ace.edit("editor");
-            this.editor.setTheme("ace/theme/monokai");
-            this.editor.setShowPrintMargin(false);
-            this.editor.getSession().setMode("ace/mode/javascript");
+            $(document).ready(function(){
+                this.editor = ace.edit("editor");
+                this.editor.setTheme("ace/theme/monokai");
+                this.editor.setShowPrintMargin(false);
+                this.editor.getSession().setMode("ace/mode/javascript");
 
-            
-            $("#submit").on('click',function(){
-                self.submit();
+                require(['timer'],function(){});    
+                $("#submit").on('click',function(){
+                    self.submit();
+                });
             });
 
 

@@ -6,16 +6,13 @@
               <div class="col-xs-8">
               Question
               </div>
-              <div class="col-xs-2">
-                  <button type="button" class="btn btn-default btn-xs" style="height:30px;">Start</button>
-              </div>
-              <div class="col-xs-2" >
+              <div class="col-xs-4" >
                   <button type="button" class="btn btn-default btn-xs" style="height:30px;"  data-toggle="modal" data-target="#myModal">Hint</button>
               </div>
           </div>
         </div>
-        <div class="panel-body">Given this bubble sort algorithm, add the missing pieces in order for <thead>
-            the algorithm to work.
+        <div class="panel-body">Bubble sort has worst-case and average complexity both О(n2), where n is the number of items being sorted.
+        rewrite this algorithm to sort a list in O(n log n) average complexity.
         </thead> </div>
       <div class="panel-footer">
           Example:
@@ -26,25 +23,33 @@ should return [3,15,21,32]</p>
       </div>
     </div>
     <div class="col-xs-9" style="padding:0px;margin:0px;">
-        <div id="navigation" class="row"> 
-
-            <div id="timer"  class="col-sm-10"></div>
+        <div id="navigation" class="row" style="padding:0px;margin:0px;">
+            <div  class="col-sm-1">
+              <div id="timer" style="background:white;text-align:center;margin-top:12px;"></div>
+            </div>
+            <div class="col-sm-9">
+            </div>
             <div class="col-sm-2" style="text-align:right;margin-top:7px;margin-bottom:7px;">
                 <button type="button" class="btn btn-default btn-xs" style="height:30px;margin-right:10px;" data-toggle="modal" data-target="#myModal" id="submit" style="height:20%;">Submit</button>
             </div>
         </div>
-        <div class="container" style="margin:0px;padding:0px;height:94%;">
-            <div id="editor" style="height:100%;">function bubbleSort(a){
+        <div class="container" style="margin:0px;padding:0px;height:94%;width:100%;">
+            <div id="editor" style="height:100%;">function bubbleSort(a)
+{
     var swapped;
     do {
         swapped = false;
         for (var i=0; i < a.length-1; i++) {
             if (a[i] > a[i+1]) {
+                var temp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = temp;
                 swapped = true;
             }
         }
     } while (swapped);
 }
+
         </div>
         </div>
     </div>
