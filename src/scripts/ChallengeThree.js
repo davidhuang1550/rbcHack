@@ -5,18 +5,22 @@ define(['jquery'],function($){
         }
         submit() {
             let value = this.editor.getSession().getValue(),
-            problem = "debug";
+            problem = "time";
             $.ajax({
               url: "https://rbcvalidate.herokuapp.com/validate",
               type: "POST",
               dataType: "json",
               data: {"code": value, "problem": problem},
               // dataType: "text",
-              success: function(response){
+              success: function(responses){
+                  console.log(responses)
+                  $('#modal-body-results-3').empty()
+                  for (var i = responses.length - 1; i >= 0; i--) {
+                    $('#modal-body-results-3').append(responses[i].test+" <strong>"+responses[i].response+" ("+responses[i].time+" seconds)"+" </strong></br>")
+                  };
                   require(['summary'],function(summary){
                       summary.ChallengeThree = $('#timer').text();
                   });
-                console.log(response);
               },
               error: function(error){
                 console.log(error);
@@ -34,7 +38,7 @@ define(['jquery'],function($){
 
                 require(['timer'],function(){});    
                 $("#submit").on('click',function(){
-                    //self.submit();
+                    self.submit();
                     require(['summary'],function(summary){
                         summary.ChallengeThree = $('#timer').text();
                     });
