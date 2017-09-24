@@ -28,6 +28,13 @@ define(['PartialViewStrings','CommonAjax'],
                         mClass.InitializeListeners();        
                     });
                     break;
+                case _.StoryThree:
+                    $(loadInto).html(result);
+                    require(['StoryThree'], function(StoryThree){
+                        mClass = new StoryThree();
+                        mClass.InitializeListeners();        
+                    });
+                    break;
                 case _.ChallengeOne:
                     $(loadInto).html(result);
                     require(['ChallengeOne'], function(ChallengeOne){
@@ -43,7 +50,11 @@ define(['PartialViewStrings','CommonAjax'],
                     });
                     break;
                 case _.ChallengeThree:
-
+                    $(loadInto).html(result);
+                    require(['ChallengeThree'], function(ChallengeThree){
+                        mClass = new ChallengeThree();
+                        mClass.InitializeListeners();
+                    });
                     break;
                 default:
                     console.log("404 error");

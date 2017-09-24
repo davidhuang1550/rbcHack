@@ -1,0 +1,51 @@
+<div class="row">    
+    <div class="col-xs-3" style="padding:0px;margin:0px;">
+        <div class="panel panel-primary" style="padding:0px;margin:0px;height:100%;">
+        <div class="panel-heading">
+          <div class="row">
+              <div class="col-xs-8">
+              Question
+              </div>
+              <div class="col-xs-2">
+                  <button type="button" class="btn btn-default btn-xs" style="height:30px;">Start</button>
+              </div>
+              <div class="col-xs-2" >
+                  <button type="button" class="btn btn-default btn-xs" style="height:30px;"  data-toggle="modal" data-target="#myModal">Hint</button>
+              </div>
+          </div>
+        </div>
+        <div class="panel-body">Given this bubble sort algorithm, add the missing pieces in order for <thead>
+            the algorithm to work.
+        </thead> </div>
+      <div class="panel-footer">
+          Example:
+Given nums = [15,3,21,32],</br>
+
+should return [3,15,21,32]</p>
+      </div>
+      </div>
+    </div>
+    <div class="col-xs-9" style="padding:0px;margin:0px;">
+        <div id="navigation" class="row"> 
+
+            <div id="timer"  class="col-sm-10"></div>
+            <div class="col-sm-2" style="text-align:right;margin-top:7px;margin-bottom:7px;">
+                <button type="button" class="btn btn-default btn-xs" style="height:30px;margin-right:10px;" data-toggle="modal" data-target="#myModal" id="submit" style="height:20%;">Submit</button>
+            </div>
+        </div>
+        <div class="container" style="margin:0px;padding:0px;height:94%;">
+            <div id="editor" style="height:100%;">function bubbleSort(a){
+    var swapped;
+    do {
+        swapped = false;
+        for (var i=0; i < a.length-1; i++) {
+            if (a[i] > a[i+1]) {
+                swapped = true;
+            }
+        }
+    } while (swapped);
+}
+        </div>
+        </div>
+    </div>
+</div>
