@@ -1,4 +1,4 @@
-define(['Route', 'CommonAjax','PartialViewStrings'], 
+define(['Route', 'CommonAjax','PartialViewStrings'],
     function(Route, CommonAjax,PartialViewStrings) {
 
     class MainManager {

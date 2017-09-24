@@ -1,5 +1,4 @@
 define(['jquery'],function($){
-
     class ChallengeTwo{
         constructor(){
             this.editor;

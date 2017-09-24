@@ -1,5 +1,4 @@
-define(['jquery'],function($){
-    
+define(['jquery'],function($){    
     class ChallengeThree{
         constructor(){
             this.editor;
@@ -41,8 +40,6 @@ define(['jquery'],function($){
                     });
                 });
             });
-
-
             
         }
     }
