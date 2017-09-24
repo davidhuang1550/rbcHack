@@ -1,6 +1,6 @@
 
 <div class="container-fluid" style="padding:0px;margin:0px;height:100%;width:98%;">
-    <div class="row" id="ChallengeContainer" >
+    <div class="row" id="ChallengeContainer" style="margin-left:1px;">
         <div class=" col-lg-4 col-md-4 col-sm-4 left-panel" style="padding:0px;margin:0px;height:100%;">
             
             <div class="container-fluid" style="padding:0px;margin:0px;height:100%;">
@@ -24,13 +24,30 @@
 
               </div>
             </div>
-              <div class="panel panel-primary" style="padding:0px;margin:0px;height:40%;">
-              <div class="panel-heading">Question</div>
-              <div class="panel-body">Content goes here!!</div>
-              <div class="panel-footer">
-                <button type="button" class="btn btn-primary">Start</button>
-                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Hint</button>
+              <div class="panel panel-primary" style="padding:0px;margin:0px;height:45%;">
+              <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                    Question
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-default btn-xs" style="height:30px;">Start</button>
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-default btn-xs" style="height:30px;"  data-toggle="modal" data-target="#myModal">Hint</button>
+                    </div>
+                </div>
               </div>
+              <div class="panel-body">Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+</div>
+            <div class="panel-footer">
+                Example:
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].</p>
+            </div>
             </div>
       <!-- Modal -->
                 <div id="notesModal" class="modal fade" role="dialog">
@@ -54,13 +71,22 @@
 
                   </div>
                 </div>
-                  <div class="panel panel-primary" style="padding:0px;margin:0px;height:40%;">
-                  <div class="panel-heading" style="padding:0px;margin:0px;">Notes</div>
-                  <div class="panel-body" style="padding:0px;margin:0px;">
-                    <textarea class="notepad"  style="padding:0px;margin:0px;height:80%;">
+                  <div class="panel panel-primary" style="padding:0px;margin:0px;height:55%;">
+                  <div class="panel-heading" style="padding:0px;margin:0px;height:12%;">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            Notes
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-default btn-xs" style="height:30px;margin-right:10px;" data-toggle="modal" data-target="#myModal" style="height:20%;">Expand</button>
+
+                        </div>
+                    </div>
+                  </div>
+                  <div class="panel-body" style="padding:0px;margin:0px;height:88%;">
+                    <textarea class="notepad"  style="padding:0px;margin:0px;">
 
                     </textarea>
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" style="height:20%;">Expand</button>
                   </div>
 
                 </div>
@@ -68,19 +94,21 @@
         </div>
         <div class="col-lg-8 col-md-8 col-sm-8 right-panel" style="height:100%;padding:0px;margin:0px;">        
             <!-- Wrapper -->
-            <div id="wrapper" class="divided" style="height:70%;">
-                <div id="navigation" class="row">
-                    <div id="timer" class="col-sm-10"></div>
+            <div class="container" style="height:5%;">
+                <div id="navigation" class="row"> 
+                    <div id="timer"  class="col-sm-10"></div>
                     <div data-toggle="modal" data-target="#myModal" id="submit" class="col-sm-1" style="text-align:right;">submit</div>
                     <div id="run" class="col-sm-1" style="text-align:right;">run</div>
                 </div>
+            </div>
+            <div id="wrapper" class="divided" style="height:65%;margin-top:5%;">
                 <div id="editor">function foo(items) {
                     var x = "All this is syntax highlighted";
                     return x;
                 }</div>
             
             </div>
-            <div class="img-thumbnail" id="console" style="height:30%;width:100%;margin-top:2em;">
+            <div class="img-thumbnail" id="console" style="height:30%;width:100%;">
 
             </div>
         </div>

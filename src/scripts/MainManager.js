@@ -7,7 +7,7 @@ define(['Route', 'CommonAjax','PartialViewStrings'],
         }
 
         init(){
-            Route(PartialViewStrings.StoryTwo,'#container');
+            Route(PartialViewStrings.ChallengeOne,'#container');
         }
 
     };
