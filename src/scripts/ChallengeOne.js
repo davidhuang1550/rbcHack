@@ -7,22 +7,25 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
         // since this is the first challenge it can be in 
         
         submit() {
-            let value = this.editor.getSession().getValue(),
-            problem = "sum";
-            $.ajax({
-              url: "https://rbcvalidate.herokuapp.com/validate",
-              type: "POST",
-              dataType: "json",
-              data: {"code": value, "problem": problem},
-              // dataType: "text",
-              success: function(response){
-                console.log(response);
-              },
-              error: function(error){
-                console.log(error);
-              }
-            });
-        }
+           let value = this.editor.getSession().getValue(),
+           problem = "sum";
+           $.ajax({
+             url: “https://rbcvalidate.herokuapp.com/validate“,
+             type: “POST”,
+             dataType: “json”,
+             data: {“code”: value, “problem”: problem},
+             // dataType: “text”,
+             success: function(responses){
+               $(‘#modal-body-results’).empty()
+               for (var i = responses.length - 1; i >= 0; i--) {
+                 $(‘#modal-body-results’).append(responses[i].test+” <strong>“+responses[i].response+“</strong></br>“)
+               };
+             },
+             error: function(error){
+               console.log(error);
+             }
+           });
+       }
         run() {
             // insert eval code
         }
@@ -81,7 +84,11 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings', 'Route'],
                 }
 
             });
-            
+
+            $("#next").on('click', function(){
+                Route(PartialViewStrings.StoryTwo, "#container");
+            });
+
             inlinePromise = CommonAjax(PartialViewStrings.Footer);
             inlinePromise.done(function(result){
                 $("#footer").html(result);
