@@ -58,10 +58,29 @@ define(['jquery', 'CommonAjax', 'Footer','PartialViewStrings'],
         /*    document.getElementById('timer').innerHTML =
             "15:00";
             self.startTimer();*/
-            
+        
+
             $("#submit").on('click',function(){
                 self.submit();
-            })  ;
+            });
+
+            $("#run").on('click', function(){
+                function yourCustomLog(msg) {
+                    $("#console").append('<p style="margin:0px;">'+msg+'</p>');
+                }
+
+                window.console.log = yourCustomLog;
+
+                try{
+
+                    var as_func = eval('('+self.editor.getSession().getValue()+')');
+
+                    console.log(as_func());
+                }catch(e){
+                    $("#console").append('<p style="margin:0px;">'+e+'</p>');
+                }
+
+            });
             
             inlinePromise = CommonAjax(PartialViewStrings.Footer);
             inlinePromise.done(function(result){
