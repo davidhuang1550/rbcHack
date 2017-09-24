@@ -16,12 +16,12 @@ define(['jquery','Route', 'PartialViewStrings'],
               // dataType: "text",
               success: function(responses){
                   console.log(responses)
-                  $('#modal-body-results-3').empty()
-                  for (var i = responses.length - 1; i >= 0; i--) {
-                    $('#modal-body-results-3').append(responses[i].test+" <strong>"+responses[i].response+" ("+responses[i].time+" seconds)"+" </strong></br>")
-                  };
                   require(['summary'],function(summary){
                       summary.ChallengeThree = $('#timer').text();
+                      $('#modal-body-results-3').empty()
+                      for (var i = responses.length - 1; i >= 0; i--) {
+                        $('#modal-body-results-3').append(responses[i].test+" <strong>"+responses[i].response+" ("+responses[i].time+" seconds)"+" </strong></br>")
+                      };
                   });
               },
               error: function(error){

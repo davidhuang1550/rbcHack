@@ -1,4 +1,5 @@
-define([''], function(){
+define(['jquery','summary'], 
+        function($,summary){
 
     class Completion{
 
@@ -7,7 +8,13 @@ define([''], function(){
         }
 
         InitializeListeners(){
+            let CompletionOne = summary.ChallengeOne,
+                CompletionTwo = summary.ChallengeTwo,
+                CompletionThree = summary.ChallengeThree;
 
+            console.log(CompletionOne);
+            console.log(CompletionTwo);
+            console.log(CompletionThree);
         }
 
     }
